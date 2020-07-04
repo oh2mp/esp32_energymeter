@@ -31,10 +31,10 @@ saves the pulse count at the moment to the NVS. Just like resetting a trip meter
 
 Theoretically it could be possible to calculate momentary power consumption, but in practice those
 calculations will never give very accurate values. That kind of energy meters are designed to measure
-accurate energy consumption, not momentary power. If you want to build an accurate power meter,
-eg. this one could be good to start with: 
+accurate energy consumption, not momentary power. If you want to build an accurate power meter, the 
 [Open Energy Monitor](https://learn.openenergymonitor.org/electricity-monitoring/ctac/how-to-build-an-arduino-energy-monitor)
+could be the good one to start with.
 
-## An example picture of a suitable energy meter
+### An example picture of a suitable energy meter
 
 ![energy meter](s/dds-1y.jpg)
