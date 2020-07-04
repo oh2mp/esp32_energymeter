@@ -29,6 +29,6 @@ cycles will be reached.
 If the button is pressed more than 5 seconds, the board's LED will blink 5 times and then the program
 saves the pulse count at the moment to the NVS. Just like resetting a trip meter in a car.
 
-## An example picture of suitable energy meter
+## An example picture of a suitable energy meter
 
 ![energy meter](s/dds-1y.jpg)
