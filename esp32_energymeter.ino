@@ -1,7 +1,7 @@
 /*
- * ESP32 based BLE beacon 
+ * ESP32 based BLE beacon for energy meters
  *
- * See https://github.com/oh2mp/
+ * See https://github.com/oh2mp/esp32_energymeter
  *
  */
  
@@ -181,6 +181,7 @@ void loop() {
             curr_kwh = (pulse_total - pulse_reset) / (float)PULSE_FACTOR;
         }
         last_sent = millis();
+
         Serial.printf("Pulsetotal:%d Lastreset:%d kWh tot:%.1f kWh: %.1f\n", pulse_total, pulse_reset, kwh, curr_kwh);
         
         set_beacon();
