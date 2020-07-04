@@ -29,6 +29,12 @@ cycles will be reached.
 If the button is pressed more than 5 seconds, the board's LED will blink 5 times and then the program
 saves the pulse count at the moment to the NVS. Just like resetting a trip meter in a car.
 
+Theoretically it could be possible to calculate momentary power consumption, but in practice those
+calculations will never give very accurate values. That kind of energy meters are designed to measure
+accurate energy consumption, not momentary power. If you want to build an accurate power meter,
+eg. this one could be good to start with: 
+[Open Energy Monitor](https://learn.openenergymonitor.org/electricity-monitoring/ctac/how-to-build-an-arduino-energy-monitor)
+
 ## An example picture of a suitable energy meter
 
 ![energy meter](s/dds-1y.jpg)
