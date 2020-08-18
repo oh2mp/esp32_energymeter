@@ -38,3 +38,5 @@ could be the good one to start with.
 ### An example picture of a suitable energy meter
 
 ![energy meter](s/dds-1y.jpg)
+
+![beacon installation](s/beacon_installation.jpg)
