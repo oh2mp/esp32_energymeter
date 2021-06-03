@@ -39,8 +39,10 @@ could be the good one to start with.
 
 You may want to start with the same value as the real meter shows or if the beacon and the real energy meter get 
 unsynchronized (eg. if your beacon is disconnected for a long time). The seed value can be set the beacon via serial port.
-Just send the value eg. from serial console and hit enter. The value must be in **pulses**. An example:
-If your energy meter gives 2000 impulses per kWh and you want to set the value to 42 kWh, calculate 42 * 2000 imp = **84000**.
+Just send the value eg. from serial console and hit enter. 
+
+The value must be in **pulses**. An example: If your energy meter gives 2000 impulses per kWh and you want 
+to set the value to 42 kWh, calculate 42 * 2000 imp = **84000**.
 
 ### An example picture of a suitable energy meter
 
