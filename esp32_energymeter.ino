@@ -40,6 +40,7 @@ uint32_t last_saved = 0;
 const uint32_t min_pulsetime = int(MAX_WATT/3600.0/PULSE_FACTOR*10000)*100;
 bool buttonpressed = false;
 uint32_t buttontime = 0;
+char serialbuffer[12];
 
 BLEAdvertising *advertising;
 std::string mfdata = "";
@@ -133,6 +134,7 @@ void setup() {
 
     Serial.begin(115200);
     Serial.println("ESP32 energymeter");
+    memset(serialbuffer, 0, sizeof(serialbuffer));
     
     nvs_init();
     uint32_t foo;    // pulse_total and reset are volatile, so we must do it this way
@@ -153,6 +155,23 @@ void setup() {
  
 /* ---------------------------------------------------------------------------------- */
 void loop() {
+    if (Serial.available() > 0) {
+        char c = Serial.read();
+        if (c == '\n' && strlen(serialbuffer) > 0) {
+            pulse_total = atoi(serialbuffer);
+            if (pulse_reset > pulse_total) pulse_reset = pulse_total;
+            Serial.printf("New total pulse count from serial: %d\n", pulse_total);
+            memset(serialbuffer, 0, sizeof(serialbuffer));
+        } else if (c >= '0' && c <= '9') {
+            serialbuffer[strlen(serialbuffer)] = c;
+        } else {
+            memset(serialbuffer, 0, sizeof(serialbuffer));
+        }
+        if (strlen(serialbuffer) > 10) {
+            memset(serialbuffer, 0, sizeof(serialbuffer));
+        }
+    }
+
     if (digitalRead(RESETBUTTON) == LOW) {
         if (buttonpressed == false) {
             buttonpressed = true;
